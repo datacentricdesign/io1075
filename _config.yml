@@ -1,0 +1,52 @@
+# Site settings
+title: Software-Based Product
+description:  The full course material for the 1st year Bachelor io1075 from TU Delft / IDE.
+baseurl: ""
+url: "https://io1075.datacentricdesign.org"
+
+# User settings
+username: Jacky Bourgeois
+user_description:
+email: lab@datacentricdesign.org
+twitter_username: datacentricdesign
+github_username:  datacentricdesign
+gplus_username:  
+disqus_username: 
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+
+# html minify
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
+
+# Links to include in menu navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+  - title: Tags
+    url: /tags
+  - title: About
+    url: /about
+
+collections_dir: collections
+collections:
+  io1075:
+    output: true
+  staff_members:
+    output: true
+    people: true
+    sort_by: name
+
+# exclude my node related stuff
+exclude: ['package.json', 'package-lock.json', 'src', 'node_modules', 'scripts', 'draft', 'gulpfile.js', 'examples']
+
+kramdown:
+  toc_levels: 1..1
