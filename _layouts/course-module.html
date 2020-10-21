@@ -86,6 +86,14 @@ layout: compress
             <span class="mdi mdi-bookshelf" style="margin-right: 10px;"></span>
             Self-Study Material
         </a></h2>
+        {% for module in site[page.module-of] %}
+        {% assign moduleid = page.module-of | append: '-' | append: page.module-id %}
+        {% if module.self-study-of == moduleid %}
+        <p>
+            {{module.introduction}}
+        </p>
+        {% endif %}
+        {% endfor %}
 
         <h2><a href="/module{{page.module-id}}/assignment">
             <span class="mdi mdi-code-json" style="margin-right: 10px;"></span>
@@ -156,7 +164,26 @@ layout: compress
         {% endfor %}
 
 
-        {{ content }}
+        <h2>
+            Live Session
+        </h2>
+        <p>
+            {{page.live}}
+        </p>
+
+        <h2>
+            Coaching Session
+        </h2>
+        <p>
+            {{page.coach | markdownify}}
+        </p>
+
+        {% if page.gist != null %}
+        <h2>
+            Snippet of code for this module
+        </h2>
+        <script src="https://gist.github.com{{page.gist}}"></script>
+        {% endif%}
     </article>
 
     {% include course-nav.html %}

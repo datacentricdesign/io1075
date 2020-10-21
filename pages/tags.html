@@ -6,28 +6,27 @@ description: "Search through io1075 #tag."
 ---
 
 <div class="tags">
-{% assign tags_list =  site.io1075 | map: 'tags' | join: ','  | split: ',' | uniq %}
-  {% if tags_list.first[0] == null %}
-    {% for tag in tags_list %}
-        <a href="#{{ tag | slugify }}">{{ tag }}</a>
-    {% endfor %}
-  {% else %}
-    {% for tag in tags_list %}
-        <a href="#{{ tag[0] | slugify }}">{{ tag[0] }}</a>
-    {% endfor %}
-  {% endif %}
-{% assign tags_list = nil %}
-</div>
-
-{% assign tags =  site.io1075 | map: 'tags' | join: ','  | split: ',' | uniq %}
-{% for tag in tags %}
-  <span class="tag-title" id="{{ tag | slugify }}">{{ tag }}</span>
-  <ul>
-  {% for page in site.io1075 %}
-    {% if page.tags contains tag %}
-    <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+  {% assign tags_list =  site.io1075 | map: 'tags' | join: ','  | split: ',' | uniq %}
+    {% if tags_list.first[0] == null %}
+      {% for tag in tags_list %}
+          <a href="#{{ tag | slugify }}">{{ tag }}</a>
+      {% endfor %}
+    {% else %}
+      {% for tag in tags_list %}
+          <a href="#{{ tag[0] | slugify }}">{{ tag[0] }}</a>
+      {% endfor %}
     {% endif %}
+  {% assign tags_list = nil %}
+  </div>
+  
+  {% assign tags =  site.io1075 | map: 'tags' | join: ','  | split: ',' | uniq %}
+  {% for tag in tags %}
+    <span class="tag-title" id="{{ tag | slugify }}">{{ tag }}</span>
+    <ul>
+    {% for page in site.io1075 %}
+      {% if page.tags contains tag %}
+      <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+    </ul>
   {% endfor %}
-  </ul>
-{% endfor %}
-

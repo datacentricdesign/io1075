@@ -1,6 +1,6 @@
 ---
 name: Elvis Borges
-position: Support Staff
-link: 
-img: /assets/img/people/people.jpg
+position: Education and Research Support Staff
+link:
+img: /assets/img/people/elvis.jpeg
 ---

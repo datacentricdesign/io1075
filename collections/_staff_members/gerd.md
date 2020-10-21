@@ -1,6 +1,6 @@
 ---
 name: Gerd Kortuem
-position: Full Professor
-link: 
+position: Professor
+link:
 img: /assets/img/people/gerd.jpg
 ---

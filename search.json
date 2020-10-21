@@ -1,22 +1,13 @@
 ---
 ---
 [
-  {% for post in site.posts %}
+  {% for coursePage in site.io1075 %}
     {
-      "title"    : "{{ post.title | escape }}",
-      "tags"     : "{{ post.tags | array_to_sentence_string }}",
-      "categories"     : "{{ post.main-class }}",
-      "url"      : "{{ site.baseurl }}{{ post.url }}",
-      "date"     : "{{ post.date | date_to_string}}"
-    },
+      "title"    : "{{ coursePage.title | escape }}",
+      "tags"     : "{{ coursePage.tags | array_to_sentence_string }}",
+      "categories"     : "{{ coursePage.main-class }}",
+      "url"      : "{{ site.baseurl }}{{ coursePage.url }}"
+    } {% unless forloop.last %},{% endunless %}
   {% endfor %}
    
-
-  // {% for io1075 in site.io1075 %}
-  //   {
-  //     "title"    : "{{ io1075.title | escape }}",
-  //     "tags"     : "{{ io1075.tags | array_to_sentence_string }}",
-  //     "url"      : "{{ io1075.baseurl }}{{ io1075.url }}"
-  //   },
-  // {% endfor %}
 ]

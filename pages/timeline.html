@@ -1,0 +1,34 @@
+---
+layout: minimal
+title: 'Course Timeline'
+permalink: /timeline/index.html
+description: 'All the milestones of the course.'
+---
+
+<div class="timeline-container">
+
+  {% for activity in site.drafts %}
+
+  {% if activity contains module-id %}
+  <div class="timeline-block timeline-block-left">
+    <div class="marker"></div>
+    <div class="timeline-content">
+      <h3><a href="{{activity.url}}">{{activity.title}}</a></h3>
+      <p><b><i>Week {{activity.module-id}}</i></b></p>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if activity contains self-study-id %}
+  <div class="timeline-block timeline-block-rigth">
+    <div class="marker"></div>
+    <div class="timeline-content">
+      <h3><a href="{{activity.url}}">Self-Study: {{activity.title}}</a></h3>
+      <p><b><i>{{activity.date}}</i></b></p>
+    </div>
+  </div>
+  {% endif %}
+
+  {% endfor %}
+
+</div>

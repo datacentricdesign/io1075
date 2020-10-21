@@ -1,9 +1,9 @@
 (function($) {
     $.fn.simpleJekyllSearch = function(options) {
         var settings = $.extend({
-            jsonFile        : location+'/search.json',
-            jsonFormat      : 'title,tags,url',
-            template : '<li><article><a href="{url}">{title} <span class="entry-date"></span></a></article></li>',
+            jsonFile        : '/search.json',
+            jsonFormat      : 'title,tags,categories,url,date',
+            template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{date}</time></span></a></article></li>',
             searchResults   : '.search-results',
             searchResultsTitle   : '<h4>Search results:</h4>',
             limit           : '10',

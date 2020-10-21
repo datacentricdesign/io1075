@@ -1,6 +1,6 @@
 # Site settings
 title: Software-Based Product
-description:  The full course material for the 1st year Bachelor io1075 from TU Delft / IDE.
+description:  The full, open-source course material for the 1st year Bachelor io1075 from TU Delft / IDE.
 baseurl: ""
 url: "https://io1075.datacentricdesign.org"
 
@@ -10,8 +10,6 @@ user_description:
 email: lab@datacentricdesign.org
 twitter_username: datacentricdesign
 github_username:  datacentricdesign
-gplus_username:  
-disqus_username: 
 
 # Build settings
 markdown: kramdown
@@ -39,6 +37,8 @@ links:
 collections_dir: collections
 collections:
   io1075:
+    output: true
+  drafts:
     output: true
   staff_members:
     output: true
