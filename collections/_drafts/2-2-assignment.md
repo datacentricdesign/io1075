@@ -10,6 +10,8 @@ prog_environment:
 design: class diagrams
 code_management: code organisation (project structure, code style)
 computational_concepts: classes, objects, methods control flow
+date: 2021-02-16 08:45:00
+end: 2021-02-16 12:30:00
 ---
 
 # Task 1: Pseudo Code

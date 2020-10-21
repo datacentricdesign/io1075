@@ -7,6 +7,8 @@ self-study-id: 1
 self-study-of: io1075-1
 tags:
 introduction: In this module, the self study material focus on
+date: 2021-02-08 08:45:00
+end: 2021-02-08 10:30:00
 ---
 
 # The GoodNight Lamp

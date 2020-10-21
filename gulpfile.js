@@ -100,6 +100,14 @@ gulp.task('watch', function () {
 	});
 });
 
+gulp.task('serve', function () {
+	browserSync.init({
+		server: {
+			baseDir: '_site'
+		}
+	});
+});
+
 /**
  * Default task, running just `gulp` will compile the stylus,
  * compile the jekyll site, launch BrowserSync & watch files.

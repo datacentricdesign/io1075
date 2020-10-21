@@ -10,6 +10,8 @@ prog_environment: basics of command line
 design: flow chart
 code_management: VCS, test unit
 computational_concepts: data structure (arrays, collections), scope
+date: 2021-02-23 08:45:00
+end: 2021-02-23 12:30:00
 ---
 
 

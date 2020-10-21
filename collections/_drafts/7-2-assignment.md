@@ -10,4 +10,6 @@ prog_environment: "-"
 design:  "-"
 code_management: "-"
 computational_concepts: basic plotting, time series, moving average, aggregation, dashboard
+date: 2021-03-23 08:45:00
+end: 2021-03-23 12:30:00
 ---

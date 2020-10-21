@@ -10,4 +10,6 @@ prog_environment: "-"
 design:  data model (E-R Model)
 code_management: logs
 computational_concepts: files, database, data format (CSV)
+date: 2021-03-09 08:45:00
+end: 2021-03-09 12:30:00
 ---

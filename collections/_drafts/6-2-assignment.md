@@ -10,6 +10,8 @@ prog_environment: "-"
 design:  "-"
 code_management: "-"
 computational_concepts: REST APIs, client/server, publish/subscribe
+date: 2021-03-16 08:45:00
+end: 2021-03-16 12:30:00
 ---
 
 REST API to control the light

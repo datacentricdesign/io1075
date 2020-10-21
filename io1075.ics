@@ -1,0 +1,22 @@
+---
+layout: null
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ZContent.net//Zap Calendar 1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+{% for activity in site.drafts %}{% if activity.course-id == null %}BEGIN:VEVENT
+SUMMARY:{{activity.title}}
+{% if activity.module-id != null %}UID:module-{{activity.module-id}}{% elsif activity.self-study-id != null %}UID:self-study-{{activity.self-study-id}}{% elsif activity.labxp-id != null %}UID:labxp-{{activity.labxp-id}}{% elsif activity.assignment-id != null %}UID:assignment-{{activity.assignment-id}}{% elsif activity.live-session-id != null %}UID:live-session-{{activity.live-session-id}}{% endif %}
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+DTSTART:{{activity.date | date : "%Y%m%dT%H%M%S"}}
+DTEND:{{activity.end | date : "%Y%m%dT%H%M%S"}}
+DTSTAMP:{{ site.time | date: "%Y%m%dT%H%M%S" }}
+CATEGORIES:IO1075
+LOCATION:Online
+DESCRIPTION:test desc
+URL:{{site.url}}{{activity.url}}
+END:VEVENT
+{% endif %}{% endfor %}END:VCALENDAR

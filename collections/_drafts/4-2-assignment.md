@@ -10,6 +10,8 @@ prog_environment: dependencies, debugging
 design: component and sequence diagrams
 code_management: exceptions
 computational_concepts: communication models, protocols, data format (encoding, JSON)
+date: 2021-03-02 08:45:00
+end: 2021-03-02 12:30:00
 ---
 
 # Task 1: Checking the Light Status

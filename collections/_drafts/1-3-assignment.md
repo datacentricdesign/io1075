@@ -11,10 +11,12 @@ prog_environment: environment (IDE, Jupyter), code execution
 design: state diagrams, class diagrams
 code_management: comments, functions
 computational_concepts: variables, types, boolean expression, objects, control flow
+date: 2021-02-09 08:45:00
+end: 2021-02-09 12:30:00
 ---
 
 # Task 1: Environment
-In this task you will get familiar with a cloud Integrated Development Editor (IDE).
+In this task, you will get familiar with a cloud Integrated Development Editor (IDE).
 
 ## Task 1.1: Connect to the cloud programming environment
 ## Task 1.2: Get familiar with the interface

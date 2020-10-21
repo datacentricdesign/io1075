@@ -7,24 +7,75 @@ description: 'All the milestones of the course.'
 
 <div class="timeline-container">
 
-  {% for activity in site.drafts %}
+  {% assign sorted = site.drafts | sort: 'date' %}
+  {% for activity in sorted %}
 
-  {% if activity contains module-id %}
-  <div class="timeline-block timeline-block-left">
+  {% if activity.module-id != null %}
+  <div class="timeline-block timeline-block-left" id="module-{{activity.module-id}}">
     <div class="marker"></div>
     <div class="timeline-content">
       <h3><a href="{{activity.url}}">{{activity.title}}</a></h3>
-      <p><b><i>Week {{activity.module-id}}</i></b></p>
+      <p><b><i>Week {{activity.date | date: "%U, %B %d"}}</i></b></p>
     </div>
   </div>
   {% endif %}
 
-  {% if activity contains self-study-id %}
-  <div class="timeline-block timeline-block-rigth">
+  {% if activity.self-study-id != null %}
+  <div class="timeline-block timeline-block-right">
     <div class="marker"></div>
     <div class="timeline-content">
-      <h3><a href="{{activity.url}}">Self-Study: {{activity.title}}</a></h3>
-      <p><b><i>{{activity.date}}</i></b></p>
+      <details>
+        <summary>
+            <a href="{{activity.url}}">Self-Study: {{activity.title}}</a>
+            <b><i>Suggested from {{activity.date | date: "%A, %H:%M"}} to {{activity.end | date: "%H:%M"}}</i></b>
+        </summary>
+        {{activity.introduction}}
+      </details>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if activity.live-session-id != null %}
+  <div class="timeline-block timeline-block-right">
+    <div class="marker"></div>
+    <div class="timeline-content">
+      <details>
+        <summary>
+            <a href="{{activity.url}}">Live Session: {{activity.title}}</a>
+            <b><i>From {{activity.date | date: "%A, %H:%M"}} - {{activity.end | date: "%H:%M"}}</i></b>
+        </summary>
+        {{activity.introduction}}
+      </details>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if activity.assignment-id != null %}
+  <div class="timeline-block timeline-block-right">
+    <div class="marker"></div>
+    <div class="timeline-content">
+      <details>
+        <summary>
+            <a href="{{activity.url}}">Programming Assignment: {{activity.title}}</a>
+            <p></p><b><i>From {{activity.date | date: "%A, %H:%M"}} - {{activity.end | date: "%H:%M"}}</i></b>
+        </summary>
+        {{activity.introduction}}
+      </details>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if activity.labxp-id != null %}
+  <div class="timeline-block timeline-block-right">
+    <div class="marker"></div>
+    <div class="timeline-content">
+      <details>
+        <summary>
+            <a href="{{activity.url}}">Lab Experiment: {{activity.title}}</a>
+            <b><i>From {{activity.date | date: "%A, %H:%M"}} - {{activity.end | date: "%H:%M"}}</i></b>
+        </summary>
+        {{activity.introduction}}
+      </details>
     </div>
   </div>
   {% endif %}
@@ -32,3 +83,9 @@ description: 'All the milestones of the course.'
   {% endfor %}
 
 </div>
+
+<script>
+  var element_to_scroll_to = document.getElementById('module-4');
+  console.log(element_to_scroll_to)
+  element_to_scroll_to.scrollIntoView();
+</script>
